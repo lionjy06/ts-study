@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        // js파일들을 ts에서도 사용할수있도록 해주는 옵션
+        "allowJs": true,
+        //module: 어떤 모듈방식을 사용할것인지 명시하는 옵션
+        "module": "CommonJS",
+        //target: 어떤버전으로 자바스크립트를 트랜스파일 해줄지 정하는 옵션
+        "target": "ES5",
+        //outDir: 빌드된 파일이 어디에 존재할것인지 명시해주는 옵션
+        "outDir": "./built",
+        // import하는 모듈을 맞게 가르켰는지 체크하는 탐색 전략 옵션 (commonJS는 node와 함께간다.)
+        "moduleResolution": "Node",
+        // 타입스크립트가 어떤 버전의 자바스크립트를 인식할지 정해주는 옵션
+        "lib": ["ES2015","DOM","DOM.Iterable"],
+        //noImplicityAny: 모든 변수에 타입을 지정해줘야하고 애매하면 any라도 해야한다 라는 옵션.
+        "noImplicitAny": true,
+        // 기본적으로 ts는 json을 가져올수없는데 이 옵션을 트루로하면 가져올수있음
+        "resolveJsonModule":true,
+        //에러났을때 에러난곳으로 가기 쉽다 => 디버깅에 용이하다
+        "sourceMap": true,
+        // import * as !!! from '$$$' 하여 import해올때 as 생략할수있게 해주는 옵션
+        "esModuleInterop":true
+    },
+    //include에 지정한 파일들을 빌드하겠따
+    "include": ["./src/**/*"],
+    // exclude에 지정된 파일은 빌드에서 제외하겠다.
+    "exclude": ["node_modules","built"]
+}
