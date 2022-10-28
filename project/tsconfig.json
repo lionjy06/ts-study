@@ -7,7 +7,7 @@
         //target: 어떤버전으로 자바스크립트를 트랜스파일 해줄지 정하는 옵션
         "target": "ES5",
         //outDir: 빌드된 파일이 어디에 존재할것인지 명시해주는 옵션
-        "outDir": "./built",
+        "outDir": "./dist",
         // import하는 모듈을 맞게 가르켰는지 체크하는 탐색 전략 옵션 (commonJS는 node와 함께간다.)
         "moduleResolution": "Node",
         // 타입스크립트가 어떤 버전의 자바스크립트를 인식할지 정해주는 옵션
@@ -19,10 +19,15 @@
         //에러났을때 에러난곳으로 가기 쉽다 => 디버깅에 용이하다
         "sourceMap": true,
         // import * as !!! from '$$$' 하여 import해올때 as 생략할수있게 해주는 옵션
-        "esModuleInterop":true
+        "esModuleInterop":true,
+        // 지정한 경로 아래 있는 모듈의 타입들을 지정한 index.d.ts를 가져와 모듈의 타입을 정해준다.
+        "typeRoots": ["./node_modules/@types","./types"],
+        "strict":true,
+        // "strictFunctionTypes":true
+        
     },
     //include에 지정한 파일들을 빌드하겠따
     "include": ["./src/**/*"],
     // exclude에 지정된 파일은 빌드에서 제외하겠다.
-    "exclude": ["node_modules","built"]
+    "exclude": ["node_modules","dist"]
 }

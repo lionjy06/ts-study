@@ -12,6 +12,11 @@
 2. 명시적인 'any' 선언하기
     - 'tsconfig.json' 파일에 'noImplicitAny' 값을 'true'를 넣어주기
 
+3. 프로젝트 환경구성
+    - babel, eslint, prettier
+4. 외부 라이브러리 모듈화 => index.d.ts를 찾아가 모듈의 타입을 저징해준 파일을 가져온다.
+
+5. strict 옵션추가후 타입 정의
 ## 참고 자료
 
 - [존스 홉킨스 코로나 현황](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6)
